@@ -132,9 +132,9 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB; _XKEYCHECK_H ; _CRT_SECURE_NO_WARNINGS ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;_XKEYCHECK_H;_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>X:\Bureau\tp\SystemC2.0.1_Modifié;X:\Bureau\tp\discret;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>X:\Bureau\save\tp\libC\src;X:\Bureau\save\tp\discret\cosimlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -142,15 +142,16 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>X:\Bureau\tp\discret\cosimlib;X:\Bureau\tp\libC\msvc60\systemc\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>systemc.lib;CosimLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\TEMP;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>systemc.lib;CosimLib.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\tp\discret\cosim.h" />
     <ClInclude Include="..\..\..\..\tp\discret\def.h" />
     <ClInclude Include="..\..\..\..\tp\discret\interIn.h" />
     <ClInclude Include="..\..\..\..\tp\discret\interOut.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\stdafx.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\targetver.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -159,9 +160,7 @@
     <ClCompile Include="..\..\..\..\tp\discret\main.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN32;NDEBUG;_CONSOLE;_LIB; _XKEYCHECK_H ; _CRT_SECURE_NO_WARNINGS ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\..\..\tp\discret\CosimLib.lib" />
+    <ClCompile Include="..\..\..\..\tp\discret\sdtafx.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleApplication2.rc" />

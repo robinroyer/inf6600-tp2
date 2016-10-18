@@ -24,11 +24,14 @@
     <ClInclude Include="..\..\..\..\tp\discret\interOut.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\tp\discret\cosim.h">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\stdafx.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\targetver.h">
+      <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -41,11 +44,9 @@
     <ClCompile Include="..\..\..\..\tp\discret\main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\..\..\..\tp\discret\CosimLib.lib">
+    <ClCompile Include="..\..\..\..\tp\discret\sdtafx.cpp">
       <Filter>Fichiers sources</Filter>
-    </Library>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleApplication2.rc">

@@ -13,7 +13,7 @@
   Description of Modification:
 
  *****************************************************************************/
-
+#include "stdafx.h" 
 #include "../libC/src/systemc.h"
 
 #include "conio.h"
@@ -30,32 +30,28 @@ int sc_main(int ac, char *av[])
   
   sc_clock clk1("clk1",1,SC_SEC);
 
- 
-
-   //signaux interout
+	//signaux interout
   
- //signaux les autres modules
+	//signaux les autres modules
 
-  
 
    //liens modules
 
 
 
 //interfaces SystemC<->Simulink
-  
-
-
 	SET_COSIM
 
-	 MIXED_SIGNAL = true;
-	 FS = true;
-	 Speriod_0 = 0.01;
+	MIXED_SIGNAL = true;
+	FS = true;
+	Speriod_0 = 0.01;
 
-	  sc_start(9000, SC_SEC); 
+	sc_start(9000, SC_SEC); 
+	_getch();
 
-	  _getch();
+	CLOSE_COSIM  
 
-	 CLOSE_COSIM 
-	  return 0;
+	cout << "EXITING IN 2 SECONDES" << endl;
+	Sleep(2000);
+	return 0;
 };

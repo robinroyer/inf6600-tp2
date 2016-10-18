@@ -1,13 +1,14 @@
+#include "stdafx.h" 
 #include "interOut.h"
-#include "cosim.h"
+#include "cosimlib/cosim.h"
 
-void interOut::nom_process()
-{
+//void interOut::nom_process()
+//{
 	
-	//WriteSignalToSimulink (nom_module1.read(),0);
+	//WriteSignalToSimulink (interOut.read(),0);
 	
 	//WriteSignalToSimulink (nom_module2.read(),1);
 
 	//WriteSignalToSimulink (cosim_in_g.read(),0);
 
-}
+//}

@@ -1,47 +1,74 @@
 #include "../libC/src/systemc.h"
 #include "def.h"
 
-SC_MODULE(interIN) // 
+SC_MODULE(interIN)
 {
 	//port declaration
-	sc_out<sc_bit>name_port;
+	sc_out<sc_bit>port0;
+	sc_out<sc_bit>port1;
+	sc_out<sc_bit>port2;
+	sc_out<sc_bit>port3;
+	sc_out<sc_bit>port4;
+	sc_out<sc_bit>port5;
+	sc_out<sc_bit>port6;
 
-
-	//state event port declaration
-
-	//sc_out<event_data_type> name_port_state_event; 
-
-
-
-	//process declaration
-
-	void process_name();
-
-
-
-	//process declaration for state event
-
-	//void state_event_process_name();
-
-
-
-
-	// module constructor
+	void process0();
+	void process1();
+	void process2();
+	void process3();
+	void process4();
+	void process5();
+	void process6();
 
 	SC_CTOR(interIN)
 	{
-
-		//SC_THREAD(process_name);
-		//		sensitive<<……;
-		//		dont_initialize();			
-
 		//state event declaration	
 		et_mat0 = new sc_event;
-
 		//state event process	
-
-		SC_METHOD(process_name);
+		SC_METHOD(process0);
 		sensitive(et_mat0);
+		dont_initialize();
+
+		//state event declaration	
+		et_mat1 = new sc_event;
+		//state event process	
+		SC_METHOD(process1);
+		sensitive(et_mat1);
+		dont_initialize();
+
+		//state event declaration	
+		et_mat2 = new sc_event;
+		//state event process	
+		SC_METHOD(process2);
+		sensitive(et_mat2);
+		dont_initialize();
+
+		//state event declaration	
+		et_mat3 = new sc_event;
+		//state event process	
+		SC_METHOD(process3);
+		sensitive(et_mat3);
+		dont_initialize();
+
+		//state event declaration	
+		et_mat4 = new sc_event;
+		//state event process	
+		SC_METHOD(process4);
+		sensitive(et_mat4);
+		dont_initialize();
+
+		//state event declaration	
+		et_mat5 = new sc_event;
+		//state event process	
+		SC_METHOD(process5);
+		sensitive(et_mat5);
+		dont_initialize();
+
+		//state event declaration	
+		et_mat6 = new sc_event;
+		//state event process	
+		SC_METHOD(process6);
+		sensitive(et_mat6);
 		dont_initialize();
 	}
 };
