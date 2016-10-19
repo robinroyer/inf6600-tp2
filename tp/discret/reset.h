@@ -3,16 +3,19 @@
 
 SC_MODULE(Reset)
 {
-	// Port declarations corresponding to signal from the main
-	sc_out<sc_bit>port;
+	// port out
+	sc_out<sc_bit> reset_to_start;
 
+	// port in
+	sc_in<sc_bit> reset_from_user
+	
 	// The methods listening to change on port
-	void process();
+	void reset();
 
 	SC_CTOR(Reset) {
 
-		SC_METHOD(process);
-		sensitive(port);
+		SC_METHOD(reset);
+		sensitive(reset_from_user);
 		dont_initialize();
 	}
 };
