@@ -3,7 +3,7 @@
 
 SC_MODULE(interIN)
 {
-	//port declaration
+	//port declaration corresponding to et_matx define
 	sc_out<sc_bit>port0;
 	sc_out<sc_bit>port1;
 	sc_out<sc_bit>port2;
@@ -12,6 +12,7 @@ SC_MODULE(interIN)
 	sc_out<sc_bit>port5;
 	sc_out<sc_bit>port6;
 
+	// The methods listening to change on et_matx
 	void process0();
 	void process1();
 	void process2();

@@ -26,25 +26,70 @@
 int sc_main(int ac, char *av[])
 {
   
-  //signaux interin aussi l'horloge
-  
-  sc_clock clk1("clk1",1,SC_SEC);
+	//TODO:implement the clock
 
-	//signaux interout
-  
-	//signaux les autres modules
-
-
-   //liens modules
+	//signaux interin aussi l'horloge
+	//sc_clock clk1("clk1",1,SC_SEC);
 
 
 
-//interfaces SystemC<->Simulink
+	// =============================== Module interIN
+
+	//Definition du module
+	interIN interIn("interIN");
+
+	// Signaux de InterIn
+	sc_signal<sc_bit> sol1_5percent;
+	sc_signal<sc_bit> sol1_1percent;
+	sc_signal<sc_bit> sol2_5percent;
+	sc_signal<sc_bit> sol2_1percent;
+	sc_signal<sc_bit> stop_antibiotic; // really ??
+	sc_signal<sc_bit> critical_glycemia;
+	sc_signal<sc_bit> normal_glycemia;
+
+	// mapping signals <-> ports
+	interIn.port0(sol1_5percent);		// => alerte
+	interIn.port1(sol1_1percent);		// => arret de la perfusion
+	interIn.port2(sol1_5percent);		// => alerte
+	interIn.port3(sol2_1percent);		// => arret de la perfusion
+	interIn.port4(stop_antibiotic);		// => stop antiniotique
+	interIn.port5(critical_glycemia);	// => injection de glucose
+	interIn.port6(normal_glycemia);		// => arret d'injection de glucose
+	//TODO: I did the mapping randomly => to Check
+
+
+	// =============================== Module interOUT
+
+	//Definition du module
+	interOUT interOut("interOUT");
+
+	// Signaux de InterOut
+	interOut.vol1_5percent_alert(sol1_5percent);
+	interOut.vol1_1percent_alert_and_stop(sol1_1percent);
+	interOut.vol2_5percent_alert(sol1_5percent);
+	interOut.vol2_1percent_alert_and_stop(sol2_1percent);
+	interOut.critical_glycemia_level(critical_glycemia);
+	interOut.average_glycemia_level(normal_glycemia);
+	//interOut.start_and_stop_anticoagulant_start_antibiotic();
+
+
+	// =============================== Module Start
+	// =============================== Module Reset
+	// =============================== Module alarme
+	// =============================== Module Arret
+	// =============================== Module Controler
+	// =============================== Module UserInterface
+
+
+
+	//interfaces SystemC<->Simulink
 	SET_COSIM
 
 	MIXED_SIGNAL = true;
 	FS = true;
 	Speriod_0 = 0.01;
+
+
 
 	sc_start(9000, SC_SEC); 
 	_getch();

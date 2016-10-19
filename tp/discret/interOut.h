@@ -1,21 +1,53 @@
 #include "../libC/src/systemc.h"
-
-SC_MODULE(interOut) 
+#include "def.h"
+SC_MODULE(interOUT)
 {
-	//portes
-	sc_out<sc_bit>port7;
-	sc_out<sc_bit>port8;
-	sc_out<sc_bit>port9;
 
-	void process7();
-	void process8();
-	void process9();
+	// Port declarations corresponding to signal from the main
+	sc_out<sc_bit>vol1_5percent_alert;
+	sc_out<sc_bit>vol1_1percent_alert_and_stop;
+	sc_out<sc_bit>vol2_5percent_alert;
+	sc_out<sc_bit>vol2_1percent_alert_and_stop;
+
+	sc_out<sc_bit>critical_glycemia_level;
+	sc_out<sc_bit>average_glycemia_level;
+
+	sc_out<sc_bit>start_and_stop_anticoagulant_start_antibiotic;
 
 
+	// The methods listening to change on port
+	// SOLUTION 1
+	void start_sol1();
+	void stop_sol1();
+	// SOLUTION 2
+	void start_sol2();
+	void stop_sol2();
+	// ANTICOAGULANT
+	void start_anticoagulant();
+	void stop_anticoagulant();
+	// ANTIBIOTIC
+	void start_antibiotic();
+	void stop_antibiotic();
+	// GLUCOSE INJECTION
+	void start_glucose_injection();
+	void stop_glucose_injection();
+
+	SC_CTOR(interOUT) {
 	
-	//SC_CTOR(interOut) 
-	//{
-	//	SC_METHOD(nom_process);
-	//	dont_initialize();
-	//}
+		SC_METHOD(stop_sol1);
+		sensitive(vol1_1percent_alert_and_stop);
+		dont_initialize();
+
+		SC_METHOD(stop_sol2);
+		sensitive(vol2_1percent_alert_and_stop);
+		dont_initialize();
+
+		SC_METHOD(start_glucose_injection);
+		sensitive(critical_glycemia_level);
+		dont_initialize();
+
+		SC_METHOD(stop_glucose_injection);
+		sensitive(average_glycemia_level);
+		dont_initialize();
+	}
 };
