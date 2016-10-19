@@ -1,7 +1,21 @@
-﻿La génération a démarré 2016-10-18 19:58:22.
+﻿La génération a démarré 2016-10-19 12:39:34.
      1>Projet "X:\Bureau\save\inf6600-tp2\visualProject\ConsoleApplication2\ConsoleApplication2\ConsoleApplication2.vcxproj" sur le nœud 2 (Rebuild cible(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IX:\Bureau\save\tp\libC\src /IX:\Bureau\save\tp\discret\cosimlib /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _XKEYCHECK_H /D _CRT_SECURE_NO_WARNINGS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\..\..\tp\discret\interIn.cpp ..\..\..\..\tp\discret\interOut.cpp ..\..\..\..\tp\discret\sdtafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IX:\Bureau\save\tp\libC\src /IX:\Bureau\save\tp\discret\cosimlib /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _XKEYCHECK_H /D _CRT_SECURE_NO_WARNINGS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\..\..\tp\discret\alarme.cpp ..\..\..\..\tp\discret\controller.cpp ..\..\..\..\tp\discret\interIn.cpp ..\..\..\..\tp\discret\interOut.cpp ..\..\..\..\tp\discret\reset.cpp ..\..\..\..\tp\discret\sdtafx.cpp ..\..\..\..\tp\discret\start.cpp ..\..\..\..\tp\discret\stop.cpp ..\..\..\..\tp\discret\userInterface.cpp
+         alarme.cpp
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70): warning C4244: 'return' : conversion de '__int64' en 'int', perte possible de données
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
+         controller.cpp
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70): warning C4244: 'return' : conversion de '__int64' en 'int', perte possible de données
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
          interIn.cpp
      1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
                  C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
@@ -16,7 +30,35 @@
                  x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
                  x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
                  x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
+         reset.cpp
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70): warning C4244: 'return' : conversion de '__int64' en 'int', perte possible de données
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
          sdtafx.cpp
+         start.cpp
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70): warning C4244: 'return' : conversion de '__int64' en 'int', perte possible de données
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
+         stop.cpp
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70): warning C4244: 'return' : conversion de '__int64' en 'int', perte possible de données
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
+         userInterface.cpp
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\shared\SDKDDKVer.h(200) : voir la définition précédente de '_WIN32_WINNT'
+     1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70): warning C4244: 'return' : conversion de '__int64' en 'int', perte possible de données
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(70) : lors de la compilation de la fonction membre 'int sc_q<sc_method_handle>::size(void) const' de la classe modèle
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(206) : voir la référence à l'instanciation de la fonction modèle 'int sc_q<sc_method_handle>::size(void) const' en cours de compilation
+                 x:\bureau\save\tp\libc\src\systemc/kernel/sc_runnable.h(124) : voir la référence à l'instanciation de la classe modèle 'sc_q<sc_method_handle>' en cours de compilation
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IX:\Bureau\save\tp\libC\src /IX:\Bureau\save\tp\discret\cosimlib /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _XKEYCHECK_H /D _CRT_SECURE_NO_WARNINGS /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _XKEYCHECK_H /D _CRT_SECURE_NO_WARNINGS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt ..\..\..\..\tp\discret\main.cpp
          main.cpp
      1>x:\bureau\save\tp\libc\src\systemc/kernel/sc_cmnhdr.h(81): warning C4005: '_WIN32_WINNT' : redéfinition de macro
@@ -29,10 +71,16 @@
          C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"x64\Release\ConsoleApplication2.res" ConsoleApplication2.rc 
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"X:\Bureau\save\inf6600-tp2\visualProject\ConsoleApplication2\x64\Release\ConsoleApplication2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\TEMP systemc.lib CosimLib.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"X:\Bureau\save\inf6600-tp2\visualProject\ConsoleApplication2\x64\Release\ConsoleApplication2.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"X:\Bureau\save\inf6600-tp2\visualProject\ConsoleApplication2\x64\Release\ConsoleApplication2.lib" /MACHINE:X64 x64\Release\ConsoleApplication2.res
+         x64\Release\alarme.obj
+         x64\Release\controller.obj
          x64\Release\interIn.obj
          x64\Release\interOut.obj
          x64\Release\main.obj
+         x64\Release\reset.obj
          x64\Release\sdtafx.obj
+         x64\Release\start.obj
+         x64\Release\stop.obj
+         x64\Release\userInterface.obj
          Génération de code en cours
      1>c:\temp\cosim\cosimlib\cosimlib\main.cpp(103): warning C4715: 'set_simcontext' : les chemins de contrôle ne retournent pas tous une valeur
          Fin de la génération du code
@@ -42,4 +90,4 @@
 
 La génération a réussi.
 
-Temps écoulé 00:00:14.08
+Temps écoulé 00:00:35.82

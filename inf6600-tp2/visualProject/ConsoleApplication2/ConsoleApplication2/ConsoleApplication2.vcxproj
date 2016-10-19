@@ -147,20 +147,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\tp\discret\alarme.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\controller.h" />
     <ClInclude Include="..\..\..\..\tp\discret\def.h" />
     <ClInclude Include="..\..\..\..\tp\discret\interIn.h" />
     <ClInclude Include="..\..\..\..\tp\discret\interOut.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\reset.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\start.h" />
     <ClInclude Include="..\..\..\..\tp\discret\stdafx.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\stop.h" />
     <ClInclude Include="..\..\..\..\tp\discret\targetver.h" />
+    <ClInclude Include="..\..\..\..\tp\discret\userInterface.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\tp\discret\alarme.cpp" />
+    <ClCompile Include="..\..\..\..\tp\discret\controller.cpp" />
     <ClCompile Include="..\..\..\..\tp\discret\interIn.cpp" />
     <ClCompile Include="..\..\..\..\tp\discret\interOut.cpp" />
     <ClCompile Include="..\..\..\..\tp\discret\main.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WIN32;NDEBUG;_CONSOLE;_LIB; _XKEYCHECK_H ; _CRT_SECURE_NO_WARNINGS ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\reset.cpp" />
     <ClCompile Include="..\..\..\..\tp\discret\sdtafx.cpp" />
+    <ClCompile Include="..\..\..\..\tp\discret\start.cpp" />
+    <ClCompile Include="..\..\..\..\tp\discret\stop.cpp" />
+    <ClCompile Include="..\..\..\..\tp\discret\userInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleApplication2.rc" />

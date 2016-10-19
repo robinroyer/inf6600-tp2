@@ -33,6 +33,24 @@
     <ClInclude Include="..\..\..\..\tp\discret\targetver.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\alarme.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\controller.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\reset.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\start.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\stop.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\tp\discret\userInterface.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\tp\discret\interIn.cpp">
@@ -45,6 +63,24 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\tp\discret\sdtafx.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\alarme.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\controller.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\reset.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\start.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\stop.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\tp\discret\userInterface.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

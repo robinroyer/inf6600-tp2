@@ -13,15 +13,26 @@
   Description of Modification:
 
  *****************************************************************************/
-#include "stdafx.h" 
-#include "../libC/src/systemc.h"
 
+// Visual Studio include
+#include "stdafx.h"
+
+// external lib
+#include "../libC/src/systemc.h"
 #include "conio.h"
 
+// include du header de macros
 #include "def.h"
+
+// include des modules
+#include "alarme.h"
+#include "controller.h"
 #include "interIn.h"
 #include "interOut.h"
-//tous les #include 
+#include "reset.h"
+#include "start.h"
+#include "stop.h"
+#include "userInterface.h"
 
 int sc_main(int ac, char *av[])
 {
@@ -74,11 +85,22 @@ int sc_main(int ac, char *av[])
 
 
 	// =============================== Module Start
+	Start start("Start");
+
 	// =============================== Module Reset
+	Reset reset("Reset");
+
 	// =============================== Module alarme
-	// =============================== Module Arret
+	Alarme alarme("Alarme");
+
+	// =============================== Module Stop
+	Stop stop("Stop");
+
 	// =============================== Module Controler
+	Controller controller("Controller");
+
 	// =============================== Module UserInterface
+	UserInterface userInterface("UserInterface");
 
 
 
