@@ -1,1 +1,5 @@
-ne pas oublier de mettre les libs dans les C:/Temp
+add the files from TEMP in C:/Temp
+
+=> the project is in inf6600-tp2
+
+src are in tp
