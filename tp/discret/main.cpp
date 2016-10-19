@@ -93,6 +93,14 @@ int sc_main(int ac, char *av[])
 	// =============================== Module alarme
 	Alarme alarme("Alarme");
 
+	// Mapping des signaux <-> ports
+	alarme.alert_sol1_5percent(sol1_5percent);
+	alarme.alert_sol2_1percent(sol1_1percent);
+	alarme.alert_sol2_1percent(sol1_5percent);
+	alarme.alert_sol2_1percent(sol2_1percent);
+	alarme.alert_critical_glycemia_level(critical_glycemia);
+
+
 	// =============================== Module Stop
 	Stop stop("Stop");
 
