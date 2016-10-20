@@ -1,4 +1,4 @@
-add the files from TEMP in C:/Temp
+compile libs and add the files from TEMP in C:/Temp
 
 => the project is in inf6600-tp2
 
