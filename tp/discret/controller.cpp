@@ -2,4 +2,10 @@
 #include "controller.h"
 #include "cosimlib/cosim.h"
 
-void Controller::process(){}
+void Controller::handle_antibiotic(){
+
+
+
+
+	
+}

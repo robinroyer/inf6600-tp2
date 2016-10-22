@@ -40,7 +40,7 @@ int sc_main(int ac, char *av[])
 	//TODO:implement the clock
 
 	//signaux interin aussi l'horloge
-	//sc_clock clk1("clk1",1,SC_SEC);
+	sc_clock clk1("clk1",1,SC_SEC);
 
 
 
@@ -109,6 +109,9 @@ int sc_main(int ac, char *av[])
 
 	// =============================== Module UserInterface
 	UserInterface userInterface("UserInterface");
+
+	// Mapping des signaux 
+	userInterface.tick(clk1);
 
 
 

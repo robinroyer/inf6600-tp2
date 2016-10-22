@@ -5,6 +5,6 @@
 void UserInterface::process(){
 
 	std::string help = "Hello welcome"
-
+	std::cout << help << std::endl;
 	
 }

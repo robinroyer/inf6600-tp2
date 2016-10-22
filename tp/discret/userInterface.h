@@ -3,10 +3,11 @@
 
 
 
-
-
 SC_MODULE(UserInterface)
 {
+	// clock tick
+	sc_int<sc_bit>tick;
+
 	// Port declarations corresponding to signal from the main
 	sc_out<sc_bit>port;
 
@@ -15,8 +16,7 @@ SC_MODULE(UserInterface)
 
 	SC_CTOR(UserInterface) {
 
-		SC_METHOD(process);
-		sensitive(port);
-		dont_initialize();
+		SC_THREAD(process);
+		sensitive_pos(tick);
 	}
 };
