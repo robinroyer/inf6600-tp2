@@ -72,40 +72,40 @@ int sc_main(int ac, char *av[])
 	// =============================== Module interOUT
 
 	//Definition du module
-	interOUT interOut("interOUT");
+	//interOUT interOut("interOUT");
 
 	// Signaux de InterOut
-	interOut.vol1_5percent_alert(sol1_5percent);
-	interOut.vol1_1percent_alert_and_stop(sol1_1percent);
-	interOut.vol2_5percent_alert(sol1_5percent);
-	interOut.vol2_1percent_alert_and_stop(sol2_1percent);
-	interOut.critical_glycemia_level(critical_glycemia);
-	interOut.average_glycemia_level(normal_glycemia);
+	//interOut.vol1_5percent_alert(sol1_5percent);
+	//interOut.vol1_1percent_alert_and_stop(sol1_1percent);
+	//interOut.vol2_5percent_alert(sol1_5percent);
+	//interOut.vol2_1percent_alert_and_stop(sol2_1percent);
+	//interOut.critical_glycemia_level(critical_glycemia);
+	//interOut.average_glycemia_level(normal_glycemia);
 	//interOut.start_and_stop_anticoagulant_start_antibiotic();
 
 
 	// =============================== Module Start
-	Start start("Start");
+	//Start start("Start");
 
 	// =============================== Module Reset
-	Reset reset("Reset");
+	//Reset reset("Reset");
 
 	// =============================== Module alarme
 	Alarme alarme("Alarme");
 
 	// Mapping des signaux <-> ports
-	alarme.alert_sol1_5percent(sol1_5percent);
-	alarme.alert_sol2_1percent(sol1_1percent);
-	alarme.alert_sol2_1percent(sol1_5percent);
-	alarme.alert_sol2_1percent(sol2_1percent);
-	alarme.alert_critical_glycemia_level(critical_glycemia);
-
+	alarme.sol1_5percent(sol1_5percent);
+	alarme.sol1_1percent(sol2_1percent);
+	alarme.sol2_5percent(sol2_5percent);
+	alarme.sol2_1percent(sol2_1percent);
+	alarme.critical_glycemia_level(critical_glycemia);
+	
 
 	// =============================== Module Stop
-	Stop stop("Stop");
+	//Stop stop("Stop");
 
 	// =============================== Module Controler
-	Controller controller("Controller");
+	//Controller controller("Controller");
 
 	// =============================== Module UserInterface
 	UserInterface userInterface("UserInterface");
@@ -113,7 +113,21 @@ int sc_main(int ac, char *av[])
 	// Mapping des signaux 
 	userInterface.tick(clk1);
 
+	// Events
+	sc_signal<sc_bit> period_4_hours;
+	sc_signal<sc_bit> period_6_hours;
+	sc_signal<sc_bit> period_8_hours;
+	sc_signal<sc_bit> period_12_hours;
+	sc_signal<sc_bit> reset_perfusion;
+	sc_signal<sc_bit> stop_simulation;
 
+	//out
+	userInterface.ui_period_4_hours(period_4_hours);
+	userInterface.ui_period_6_hours(period_6_hours);
+	userInterface.ui_period_8_hours(period_8_hours);
+	userInterface.ui_period_12_hours(period_12_hours);
+	userInterface.ui_reset_perfusion(reset_perfusion);
+	userInterface.ui_stop_simulation(stop_simulation);
 
 	//interfaces SystemC<->Simulink
 	SET_COSIM

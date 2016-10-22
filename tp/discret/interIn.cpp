@@ -8,49 +8,42 @@
 
 void interIN::process0(){
 	cout << "interIN::process0 \r\n";
-	 sc_bit value = port0.read();
-	std::cout << "the value of the port is : " << value << std::endl;
-	port0.write(~value);
+	std::cout << "the value of the port is : " << port0.read() << std::endl;
+	port0.write(~port0.read());
 }
 
 void interIN::process1(){
-	//cout << "interIN::process1 \r\n";
-	sc_bit value = port1.read();
+	cout << "interIN::process1 \r\n";
 	//std::cout << "the value of the port is : " << value << std::endl;
-	port1.write(~value);
+	port1.write(~port1.read());
 }
 
 void interIN::process2(){
-	//cout << "interIN::process2 \r\n";
-	sc_bit value = port2.read();
+	cout << "interIN::process2 \r\n";
 	//std::cout << "the value of the port is : " << value << std::endl;
-	port2.write(~value);
+	port2.write(~port2.read());
 }
 
 void interIN::process3(){
-	//cout << "interIN::process3 \r\n";
-	sc_bit value = port3.read();
+	cout << "interIN::process3 \r\n";
 	//std::cout << "the value of the port is : " << value << std::endl;
-	port3.write(~value);
+	port3.write(~port3.read());
 }
 
 void interIN::process4(){
-	//cout << "interIN::process4 \r\n";
-	sc_bit value = port4.read();
+	cout << "interIN::process4 \r\n";
 	//std::cout << "the value of the port is : " << value << std::endl;
-	port4.write(~value);
+	port4.write(~port4.read());
 }
 
 void interIN::process5(){
-	//cout << "interIN::process5 \r\n";
-	sc_bit value = port5.read();
+	cout << "interIN::process5 \r\n";
 	//std::cout << "the value of the port is : " << value << std::endl;
-	port5.write(~value);
+	port5.write(~port5.read());
 }
 
 void interIN::process6(){
-	//cout << "interIN::process6 \r\n";
-	sc_bit value = port6.read();
+	cout << "interIN::process6 \r\n";
 	//std::cout << "the value of the port is : " << value << std::endl;
-	port6.write(~value);
+	port6.write(~port6.read());
 }

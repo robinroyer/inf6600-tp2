@@ -29,7 +29,7 @@ SC_MODULE(Controller)
 
 	// Port declarations corresponding to signal from the main
 	sc_in<sc_bit>interface_to_control;
-	sc_in<sc_bit>antibiotic_injection
+	sc_in<sc_bit>antibiotic_injection;
 	
 	// port out
 	sc_out<sc_bit> reset_to_start;

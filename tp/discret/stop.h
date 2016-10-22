@@ -8,16 +8,16 @@ SC_MODULE(Stop)
 	sc_in<sc_bit>urgency_stop;
 
 	// The methods listening to change on port
-	void urgency_stop();
-	void user_stop();
+	void urgence_stop();
+	void user_need_stop();
 
 	SC_CTOR(Stop) {
 
-		SC_METHOD(user_stop);
+		SC_METHOD(user_need_stop);
 		sensitive(user_stop);
 		dont_initialize();
 
-		SC_METHOD(urgency_stop);
+		SC_METHOD(urgence_stop);
 		sensitive(urgency_stop);
 		dont_initialize();
 	}
