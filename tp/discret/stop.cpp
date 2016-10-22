@@ -5,7 +5,6 @@
 
 void Stop::urgence_stop(){
 	// Stop the simulation
-
 }
 
 void Stop::user_need_stop(){

@@ -36,9 +36,6 @@
 
 int sc_main(int ac, char *av[])
 {
-  
-	//TODO:implement the clock
-
 	//signaux interin aussi l'horloge
 	sc_clock clk1("clk1",1,SC_SEC);
 
@@ -50,12 +47,6 @@ int sc_main(int ac, char *av[])
 	sc_signal<sc_bit> reset_perfusion;
 	sc_signal<sc_bit> stop_simulation;
 
-
-	// =============================== Module interIN
-
-	//Definition du module
-	interIN interIn("interIN");
-
 	// Signaux de InterIn
 	sc_signal<sc_bit> sol1_5percent;
 	sc_signal<sc_bit> sol1_1percent;
@@ -65,6 +56,15 @@ int sc_main(int ac, char *av[])
 	sc_signal<sc_bit> critical_glycemia;
 	sc_signal<sc_bit> normal_glycemia;
 
+	// Controller event
+	sc_signal<sc_bit> start_anticoagulant_injection;
+	sc_signal<sc_bit> stop_anticoagulant_injection;
+	sc_signal<sc_bit> start_antibiotic_injection;
+
+
+	// =============================== Module interIN
+	//Definition du module
+	interIN interIn("interIN");
 	// mapping signals <-> ports
 	interIn.port0(sol1_5percent);		// => alerte
 	interIn.port1(sol1_1percent);		// => arret de la perfusion
@@ -73,22 +73,22 @@ int sc_main(int ac, char *av[])
 	interIn.port4(stop_antibiotic);		// => stop antiniotique
 	interIn.port5(critical_glycemia);	// => injection de glucose
 	interIn.port6(normal_glycemia);		// => arret d'injection de glucose
-	//TODO: I did the mapping randomly => to Check
-
+	//TODO: I did the mapping randomly =>  Check the correctness
 
 	// =============================== Module interOUT
-
 	//Definition du module
-	//interOUT interOut("interOUT");
-
+	interOUT interOut("interOUT");
 	// Signaux de InterOut
-	//interOut.vol1_5percent_alert(sol1_5percent);
-	//interOut.vol1_1percent_alert_and_stop(sol1_1percent);
-	//interOut.vol2_5percent_alert(sol1_5percent);
-	//interOut.vol2_1percent_alert_and_stop(sol2_1percent);
-	//interOut.critical_glycemia_level(critical_glycemia);
-	//interOut.average_glycemia_level(normal_glycemia);
-	//interOut.start_and_stop_anticoagulant_start_antibiotic();
+	interOut.event_start_sol1(sol1_1percent); // TODO: CHANGE THIS IS NOT TRUE
+	interOut.event_stop_sol1(sol1_1percent);
+	interOut.event_start_sol2(sol1_1percent); // TODO: CHANGE THIS IS NOT TRUE
+	interOut.event_stop_sol2(sol2_1percent);
+	interOut.event_start_glucose_injection(critical_glycemia);
+	interOut.event_stop_glucose_injection(normal_glycemia);
+	interOut.event_start_anticoagulant_injection(start_anticoagulant_injection);
+	interOut.event_stop_anticoagulant_injection(stop_anticoagulant_injection);
+	interOut.event_start_antibiotic_injection(start_antibiotic_injection);
+	interOut.event_stop_antibiotic_injection(stop_antibiotic);
 
 
 	// =============================== Module Start
