@@ -42,6 +42,13 @@ int sc_main(int ac, char *av[])
 	//signaux interin aussi l'horloge
 	sc_clock clk1("clk1",1,SC_SEC);
 
+	// User Interface Events
+	sc_signal<sc_bit> period_4_hours;
+	sc_signal<sc_bit> period_6_hours;
+	sc_signal<sc_bit> period_8_hours;
+	sc_signal<sc_bit> period_12_hours;
+	sc_signal<sc_bit> reset_perfusion;
+	sc_signal<sc_bit> stop_simulation;
 
 
 	// =============================== Module interIN
@@ -61,7 +68,7 @@ int sc_main(int ac, char *av[])
 	// mapping signals <-> ports
 	interIn.port0(sol1_5percent);		// => alerte
 	interIn.port1(sol1_1percent);		// => arret de la perfusion
-	interIn.port2(sol1_5percent);		// => alerte
+	interIn.port2(sol2_5percent);		// => alerte
 	interIn.port3(sol2_1percent);		// => arret de la perfusion
 	interIn.port4(stop_antibiotic);		// => stop antiniotique
 	interIn.port5(critical_glycemia);	// => injection de glucose
@@ -102,8 +109,11 @@ int sc_main(int ac, char *av[])
 	
 
 	// =============================== Module Stop
-	//Stop stop("Stop");
+	Stop stop("Stop");
 
+	// Mapped sigal to ports
+	stop.user_stop(stop_simulation);
+	stop.urgency_stop(stop_simulation);
 	// =============================== Module Controler
 	//Controller controller("Controller");
 
@@ -112,15 +122,6 @@ int sc_main(int ac, char *av[])
 
 	// Mapping des signaux 
 	userInterface.tick(clk1);
-
-	// Events
-	sc_signal<sc_bit> period_4_hours;
-	sc_signal<sc_bit> period_6_hours;
-	sc_signal<sc_bit> period_8_hours;
-	sc_signal<sc_bit> period_12_hours;
-	sc_signal<sc_bit> reset_perfusion;
-	sc_signal<sc_bit> stop_simulation;
-
 	//out
 	userInterface.ui_period_4_hours(period_4_hours);
 	userInterface.ui_period_6_hours(period_6_hours);
@@ -136,14 +137,9 @@ int sc_main(int ac, char *av[])
 	FS = true;
 	Speriod_0 = 0.01;
 
-
-
 	sc_start(9000, SC_SEC); 
 	_getch();
 
 	CLOSE_COSIM  
-
-	cout << "EXITING IN 2 SECONDES" << endl;
-	Sleep(2000);
 	return 0;
 };

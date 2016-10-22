@@ -14,5 +14,6 @@ void Stop::user_need_stop(){
 	// See this 2 functions if we need an other behaviour 
 	// SC_STOP Call sc_stop(). See sc_stop() manual for further detail. 
 	// SC_ABORT The action requests the report handler to call abort()
-	//sc_stop();
+	
+	sc_stop();
 }

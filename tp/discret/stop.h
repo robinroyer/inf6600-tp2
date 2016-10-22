@@ -14,11 +14,11 @@ SC_MODULE(Stop)
 	SC_CTOR(Stop) {
 
 		SC_METHOD(user_need_stop);
-		sensitive(user_stop);
+		sensitive << user_stop;
 		dont_initialize();
 
 		SC_METHOD(urgence_stop);
-		sensitive(urgency_stop);
+		sensitive << urgency_stop;
 		dont_initialize();
 	}
 };

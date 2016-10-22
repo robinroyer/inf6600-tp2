@@ -67,13 +67,13 @@ void UserInterface::handle_user_input(){
 			std::cout << "\r\nThe perfusion is reset !\r\n" << std::endl;
 			ui_reset_perfusion.write(~ui_reset_perfusion.read());
 		}
-		else
+		else if (user != "stop")
 		{
 			std::cout << "\r\nWrong input !\r\n" << std::endl;
 			std::cout << help << std::endl;
 		}
 	}
-
+	
 	std::cout << "Stop of the simulation!\r\n" << std::endl;
 	ui_stop_simulation.write(~ui_stop_simulation.read());
 	
