@@ -12,19 +12,20 @@
 *
 */
 void UserInterface::handle_user_input(){
-
 	std::string help = "Press : \r\n"
 		"- '4' for a 4-hours injection period. \r\n"
 		"- '6' for a 6-hours injection period. \r\n"
 		"- '8' for a 8-hours injection period. \r\n"
 		"- '12' for a 12-hours injection period. \r\n"
 		"- 'reset' for replacing the perfusion. \r\n"
+		"- 'start' to start the simulation. \r\n"
 		"- 'stop' to stop the simulation. \r\n";
 
 	std::cout << help << std::endl;
 
 	string user = "";
 	while (user != "stop"){
+		Sleep(400);
 		std::getline(std::cin, user);
 		if (user == "4")
 		{
@@ -67,14 +68,19 @@ void UserInterface::handle_user_input(){
 			std::cout << "\r\nThe perfusion is reset !\r\n" << std::endl;
 			ui_reset_perfusion.write(~ui_reset_perfusion.read());
 		}
+		else if (user == "start")
+		{
+			std::cout << "\r\n The simulation is starting !\r\n" << std::endl;
+			ui_start_simulation.write(~ui_start_simulation.read());
+		}
 		else if (user != "stop")
 		{
 			std::cout << "\r\nWrong input !\r\n" << std::endl;
 			std::cout << help << std::endl;
 		}
 	}
-	
+		
 	std::cout << "Stop of the simulation!\r\n" << std::endl;
 	ui_stop_simulation.write(~ui_stop_simulation.read());
-	
+
 }

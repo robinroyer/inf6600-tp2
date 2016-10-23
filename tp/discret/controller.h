@@ -4,18 +4,11 @@
 
 SC_MODULE(Controller)
 {
-	// The controller should coordinate all the actions
-	// We will store all the control variables in controller
-	// => The controller will trigger event to coordinate application
-	bool injection_s1 = false;
-	bool injection_s2 = false;
-	bool injection_glucose = false;
-	bool injection_anticoagulant = false;
-	bool injection_antibiotic = false;
-
 	// We need to store the time of the first antibiotic injection of the day
-	// int -  time ?
-
+	int time = -1;
+	// Default value to force the first injection
+	int last_antibiotic_injection = -1 * ONE_WEEK;
+	int last_anticoagulant_injection = -1 * ONE_WEEK;
 
 	// TIME CONSTANTES
 	int ONE_HOUR = 3600; // Secondes
@@ -23,31 +16,52 @@ SC_MODULE(Controller)
 	int SIX_HOURS = 6 * ONE_HOUR; // Secondes
 	int EIGHT_HOURS = 8 * ONE_HOUR; // Secondes
 	int TWELVE_HOURS = 12 * ONE_HOUR; // Secondes
+	int ONE_DAY = 24 * ONE_HOUR;
+	int ONE_WEEK =7 * ONE_DAY;
 
 	// default value for the antibiotic interval is the average
 	int antibiotic_interval = EIGHT_HOURS; 
 
 	// Port declarations corresponding to signal from the main
-	sc_in<sc_bit>interface_to_control;
-	sc_in<sc_bit>antibiotic_injection;
-
+	sc_in<sc_bit> period_4_hours;
+	sc_in<sc_bit> period_6_hours;
+	sc_in<sc_bit> period_8_hours;
+	sc_in<sc_bit> period_12_hours;
+	sc_in<bool> tick;
 	
 	// port out
-	sc_out<sc_bit> reset_to_start;
+	sc_out<sc_bit> start_anticoagulant;
+	sc_out<sc_bit> stop_anticoagulant;
 	sc_out<sc_bit> start_antibiotic;
-	sc_out<sc_bit> stop_antibiotic;
 
 	// The methods listening to change on port
-	void handle_antibiotic();
-
-
-	// TODO here we should define the boolean for each solution and
-	// variables to handle the last anticoagulant etc... 
+	void change_period_to_4_hours();
+	void change_period_to_6_hours();
+	void change_period_to_8_hours();
+	void change_period_to_12_hours();
+	void handle_antibiotic_injection();
 
 	SC_CTOR(Controller) {
 
-		SC_METHOD(handle_antibiotic);
-		sensitive(antibiotic_injection);
+		SC_METHOD(change_period_to_4_hours);
+		sensitive(period_4_hours);
 		dont_initialize();
+
+		SC_METHOD(change_period_to_6_hours);
+		sensitive(period_6_hours);
+		dont_initialize();		
+		
+		SC_METHOD(change_period_to_8_hours);
+		sensitive(period_8_hours);
+		dont_initialize();
+
+		SC_METHOD(change_period_to_12_hours);
+		sensitive(period_12_hours);
+		dont_initialize();
+
+		SC_THREAD(handle_antibiotic_injection);
+		sensitive << tick.pos();
+		dont_initialize();
+
 	}
 };
