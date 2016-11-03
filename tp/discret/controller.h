@@ -5,7 +5,7 @@
 SC_MODULE(Controller)
 {
 	// We need to store the time of the first antibiotic injection of the day
-	int time = -1;
+	int time = ONE_DAY ;
 	// Default value to force the first injection
 	int last_antibiotic_injection = -1 * ONE_WEEK;
 	int last_anticoagulant_injection = -1 * ONE_WEEK;
@@ -59,9 +59,6 @@ SC_MODULE(Controller)
 		sensitive(period_12_hours);
 		dont_initialize();
 
-		SC_THREAD(handle_antibiotic_injection);
-		sensitive << tick.pos();
-		dont_initialize();
-
+		SC_CTHREAD(handle_antibiotic_injection, tick.pos());
 	}
 };

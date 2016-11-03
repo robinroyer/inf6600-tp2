@@ -16,12 +16,13 @@ SC_MODULE(UserInterface)
 	sc_out<sc_bit> ui_reset_perfusion;
 	sc_out<sc_bit> ui_stop_simulation;
 	sc_out<sc_bit> ui_start_simulation;
-	;
+	sc_in<bool> tick;
 
 	// The methods listening to change on port
 	void handle_user_input();
 
 	SC_CTOR(UserInterface) {
-		SC_THREAD(handle_user_input);
+		//SC_THREAD(handle_user_input);
+		SC_CTHREAD(handle_user_input, tick.pos());
 	}
 };

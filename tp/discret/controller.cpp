@@ -3,31 +3,47 @@
 #include "cosimlib/cosim.h"
 
 void Controller::handle_antibiotic_injection(){
+	int t = antibiotic_interval -120;
+	bool anticoagulant = false;
+	bool antibiotic_should_start = false;
+
+	int anticoagulant_start = 0;
+	int antibiotic_start = 0;
+
 	while (true){
-		if (time - last_antibiotic_injection >= antibiotic_interval){
-			if (time - last_antibiotic_injection >= ONE_DAY)
-			{
+		if (t > antibiotic_interval - 120){
+			//anticoagulant
+			if (time >= ONE_DAY && !anticoagulant){
+				std::cout << "injection anticoagulant" << std::endl;
 				start_anticoagulant.write(~start_anticoagulant);
-				//wait(120)
-				// Sleep est la cause d'un probleme d'edition des liens de lib systemC 
-				Sleep(120 * 1000);
-				time += 119;
-				stop_anticoagulant.write(~stop_anticoagulant);
-				last_anticoagulant_injection = time;
+				anticoagulant_start = t;
+				anticoagulant = true;
 			}
-			last_antibiotic_injection = time;
-			start_antibiotic.write(~start_antibiotic);
+			if (anticoagulant && t > anticoagulant_start + 120)
+			{
+				stop_anticoagulant.write(~stop_anticoagulant);
+				time = 0;
+				anticoagulant = false;
+				antibiotic_should_start = true;
+			}
+			//antibiotic
+			if (t > antibiotic_interval && antibiotic_should_start)
+			{
+				t = 0;
+				start_antibiotic.write(~start_antibiotic);
+				antibiotic_should_start = false;
+				time += antibiotic_interval;
+			}
+
 		}
-		time++;
-		//wait(1);
-		// Sleep est la cause d'un probleme d'edition des liens de lib systemC 
-		Sleep(1000);
+		wait();
+		t++;
 	}
 }
 
 
 void Controller::change_period_to_4_hours(){
-	antibiotic_interval = FOUR_HOURS;
+	antibiotic_interval = 150;
 }
 
 void Controller::change_period_to_6_hours(){

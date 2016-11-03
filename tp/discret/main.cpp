@@ -176,7 +176,7 @@ int sc_main(int ac, char *av[])
 	userInterface.ui_reset_perfusion(ui_reset_perfusion);
 	userInterface.ui_stop_simulation(ui_stop_simulation);
 	userInterface.ui_start_simulation(ui_start_simulation);
-
+	userInterface.tick(clk1.signal());
 
 	SET_COSIM
 	MIXED_SIGNAL = true;
@@ -185,7 +185,7 @@ int sc_main(int ac, char *av[])
 
 	sc_start(10000, SC_SEC); 
 	_getch();
-
+	Sleep(100000);
 	CLOSE_COSIM  
 	return 0;
 };
